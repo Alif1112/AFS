@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Achievements | Apex Falcon Security (AFS)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #00f0ff;
+            --secondary: #7928ca;
+            --dark: #0a0a14;
+            --darker: #05050a;
+            --light: #ffffff;
+            --accent: #ff4d4d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--dark);
+            color: var(--light);
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            background: rgba(10, 10, 20, 0.9);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 35px;
+            height: 35px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .cta-button {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: var(--dark);
+            padding: 0.5rem 1.2rem;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 240, 255, 0.3);
+        }
+
+        /* Page Content */
+        .page-container {
+            padding: 8rem 5% 4rem;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+
+        .section-header p {
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.8;
+        }
+
+        /* Achievements Grid */
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .achievement-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border-color: var(--primary);
+        }
+
+        .achievement-icon {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .achievement-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .achievement-card p {
+            opacity: 0.8;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .achievement-date {
+            color: var(--primary);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* Hall of Fame Section */
+        .hall-of-fame-section {
+            margin-top: 6rem;
+        }
+
+        .company-badges {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin: 2rem 0 3rem;
+        }
+
+        .company-badge {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50px;
+            padding: 0.8rem 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .company-badge:hover {
+            transform: translateY(-3px);
+            border-color: var(--primary);
+            box-shadow: 0 5px 15px rgba(0, 240, 255, 0.2);
+        }
+
+        .company-badge i {
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        .screenshot-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .screenshot-card {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            cursor: pointer;
+        }
+
+        .screenshot-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            border-color: var(--primary);
+        }
+
+        .screenshot-img {
+            width: 100%;
+            height: 180px;
+            background: linear-gradient(45deg, #1a1a2e, #16213e);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .screenshot-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+            margin: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .screenshot-content {
+            padding: 1.5rem;
+        }
+
+        .screenshot-content h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+            color: var(--primary);
+        }
+
+        .screenshot-link {
+            display: inline-block;
+            color: var(--light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.08);
+            padding: 0.4rem 1rem;
+            border-radius: 4px;
+        }
+
+        .screenshot-link:hover {
+            background: rgba(0, 240, 255, 0.15);
+            color: var(--primary);
+        }
+
+        .screenshot-link i {
+            margin-left: 5px;
+            font-size: 0.8rem;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 3rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            transform: translateX(-5px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--darker);
+            padding: 2rem 5%;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--light);
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-links a {
+            color: var(--light);
+            font-size: 1.2rem;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            opacity: 0.6;
+            font-size: 0.9rem;
+        }
+
+        /* Fixed Image Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(5, 5, 10, 0.95);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-container {
+            width: 75%;
+            height: 75%;
+            background: var(--darker);
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(0, 240, 255, 0.3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            transform: scale(0.8);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            padding: 20px;
+        }
+
+        .modal-overlay.active .modal-container {
+            transform: scale(1);
+        }
+
+        .modal-image {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            z-index: 10;
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(0, 0, 0, 0.7);
+            color: var(--light);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            z-index: 20;
+            transition: all 0.3s ease;
+        }
+
+        .modal-close:hover {
+            background: var(--accent);
+            transform: rotate(90deg);
+        }
+
+        /* Animated Border */
+        .animated-border {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+            overflow: hidden;
+            z-index: 5;
+        }
+
+        .animated-border::before {
+            content: '';
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            background: conic-gradient(from 0deg,
+                    var(--primary),
+                    var(--secondary),
+                    var(--accent),
+                    var(--primary));
+            animation: rotate 3s linear infinite;
+        }
+
+        .animated-border::after {
+            content: '';
+            position: absolute;
+            inset: 3px;
+            background: var(--darker);
+            border-radius: 12px;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .section-header h1 {
+                font-size: 2rem;
+            }
+
+            .company-badges {
+                gap: 1rem;
+            }
+
+            .company-badge {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.9rem;
+            }
+
+            .modal-container {
+                width: 90%;
+                height: 60%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .company-badges {
+                gap: 0.8rem;
+            }
+
+            .company-badge {
+                padding: 0.5rem 1rem;
+                font-size: 0.85rem;
+            }
+
+            .screenshot-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-container {
+                width: 95%;
+                height: 50%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html" class="logo">
+            <div class="logo-icon">
+                <i class="fas fa-shield-alt"></i>
+            </div>
+            Apex Falcon Security (AFS)
+        </a>
+        <div class="nav-links">
+            <a href="index.html#home">Home</a>
+            <a href="index.html#services">Services</a>
+            <a href="index.html#experts">Our Experts</a>
+            <a href="index.html#contact">Contact</a>
+            <a href="achievements.html">Achievements</a>
+            <a href="blog.html">Blog</a>
+        </div>
+        <a href="index.html#contact" class="cta-button">Get Started</a>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="page-container">
+        <!-- Particle Background for Top Section Only -->
+        <div id="particles-top" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;">
+        </div>
+
+        <div class="section-header" style="position: relative; z-index: 1;">
+            <h1>Our Achievements</h1>
+            <p>Recognized by industry leaders for our exceptional security expertise and contributions</p>
+        </div>
+
+        <!-- Achievements Grid -->
+        <div class="achievements-grid" style="position: relative; z-index: 1;">
+            <!-- Achievement 1 -->
+            <div class="achievement-card">
+                <div class="achievement-icon">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                <h3>Pioneering Security Research</h3>
+                <p>Our researchers and engineers have developed cutting-edge cybersecurity solutions, earning our
+                    company a place in the international Hall of Fame.</p>
+                <div class="achievement-date">Ongoing</div>
+            </div>
+
+            <!-- Achievement 2 -->
+            <div class="achievement-card">
+                <div class="achievement-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Competing with Top Bug Hunters</h3>
+                <p>Our team members have identified critical vulnerabilities while competing with leading bug hunters
+                    worldwide, showcasing our top-tier security expertise.</p>
+                <div class="achievement-date">Ongoing</div>
+            </div>
+
+            <!-- Achievement 3 -->
+            <div class="achievement-card">
+                <div class="achievement-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3>Excellence in Security and Skills</h3>
+                <p>Our experts demonstrate the highest standards in cybersecurity, safeguarding client systems and
+                    building global trust in our services.</p>
+                <div class="achievement-date">Ongoing</div>
+            </div>
+        </div>
+
+        <!-- Hall of Fame Section -->
+        <div class="hall-of-fame-section" style="position: relative; z-index: 1;">
+            <div class="section-header">
+                <h2>Hall of Fame</h2>
+                <p>Our recognitions in top industry programs</p>
+            </div>
+
+            <div class="company-badges">
+                <div class="company-badge">
+                    <i class="fab fa-google"></i>
+                    <span>Google Hall of Fame</span>
+                </div>
+                <div class="company-badge">
+                    <i class="fab fa-microsoft"></i>
+                    <span>Microsoft Hall of Fame</span>
+                </div>
+                <div class="company-badge">
+                    <i class="fas fa-building"></i>
+                    <span>Tencent Hall of Fame</span>
+                </div>
+                <div class="company-badge">
+                    <i class="fab fa-dollar-sign"></i>
+                    <span>Coinbase Hall of Fame</span>
+                </div>
+                <div class="company-badge">
+                    <i class="fab fa-i"></i>
+                    <span>DigitalOcean Hall of Fame</span>
+                </div>
+            </div>
+
+            <div class="screenshot-grid">
+                <!-- Screenshot 1 -->
+                <div class="screenshot-card">
+                    <div class="screenshot-img">
+                        <img src="fame/google.jpg" alt="Google Security Hall of Fame" data-src="fame/google.jpg">
+                    </div>
+                    <div class="screenshot-content">
+                        <h3>Google Security Hall of Fame</h3>
+                        <a href="https://bughunters.google.com/leaderboard/honorable-mentions"
+                            class="screenshot-link">View Certificate <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+
+                <!-- Screenshot 2 -->
+                <div class="screenshot-card">
+                    <div class="screenshot-img">
+                        <img src="fame/microsoft.png" alt="Microsoft Security Hall of Fame"
+                            data-src="fame/microsoft.png">
+                    </div>
+                    <div class="screenshot-content">
+                        <h3>Microsoft Security Hall of Fame</h3>
+                        <a href="https://msrc.microsoft.com/update-guide/acknowledgement/online"
+                            class="screenshot-link">View Recognition <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+
+                <!-- Screenshot 3 -->
+                <div class="screenshot-card">
+                    <div class="screenshot-img">
+                        <img src="fame/coinbase.png" alt="Tencent Security Hall of Fame" data-src="fame/coinbase.png">
+                    </div>
+                    <div class="screenshot-content">
+                        <h3>Coinbase Security Hall of Fame</h3>
+                        <a href="https://hackerone.com/shakibul1" class="screenshot-link">View Certificate <i
+                                class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+
+                <!-- Screenshot 4 -->
+                <div class="screenshot-card">
+                    <div class="screenshot-img">
+                        <img src="fame/alifsec.png" alt="Apple Security Hall of Fame" data-src="fame/alifsec.png">
+                    </div>
+                    <div class="screenshot-content">
+                        <h3>Bugcrowd Security Hall of Fame</h3>
+                        <a href="https://bugcrowd.com/h/ALIF_HOSSAIN" class="screenshot-link">View Recognition <i
+                                class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+
+                <!-- Screenshot 5 -->
+                <div class="screenshot-card">
+                    <div class="screenshot-img">
+                        <img src="fame/tencent.jpg" alt="Amazon Security Hall of Fame" data-src="fame/tencent.jpg">
+                    </div>
+                    <div class="screenshot-content">
+                        <h3>Tencent Security Hall of Fame</h3>
+                        <a href="https://en.security.tencent.com/index.php/thanks" class="screenshot-link">View
+                            Certificate <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+
+                <!-- Screenshot 6 -->
+                <div class="screenshot-card">
+                    <div class="screenshot-img">
+                        <img src="fame/nestle.jpg" alt="Facebook Security Hall of Fame" data-src="fame/nestle.jpg">
+                    </div>
+                    <div class="screenshot-content">
+                        <h3>Nestle Security Hall of Fame</h3>
+                        <a href="https://app.intigriti.com/programs/nestl%C3%A9/nestl%C3%A9vdp/leaderboard?alltime=true&severity=1"
+                            class="screenshot-link">View Recognition <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+
+                <!-- Screenshot 7 -->
+                <div class="screenshot-card">
+                    <div class="screenshot-img">
+                        <img src="fame/ant_group.png" alt="IBM Security Hall of Fame" data-src="fame/ant_group.png">
+                    </div>
+                    <div class="screenshot-content">
+                        <h3>ANT GROUP Security Hall of Fame</h3>
+                        <a href="https://mysrc.group/honor_ranking" class="screenshot-link">View Certificate <i
+                                class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+
+                <!-- Screenshot 8 -->
+                <div class="screenshot-card">
+                    <div class="screenshot-img">
+                        <img src="fame/difitalocean.png" alt="Oracle Security Hall of Fame"
+                            data-src="fame/difitalocean.png">
+                    </div>
+                    <div class="screenshot-content">
+                        <h3>DigitalOcean Security Hall of Fame</h3>
+                        <a href="https://app.intigriti.com/programs/digitalocean/digitalocean/leaderboard?alltime=true&severity=1"
+                            class="screenshot-link">View Recognition <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+
+                <!-- Screenshot 9 -->
+                <div class="screenshot-card">
+                    <div class="screenshot-img">
+                        <img src="fame/robinhood.jpg" alt="Cisco Security Hall of Fame" data-src="fame/robinhood.jpg">
+                    </div>
+                    <div class="screenshot-content">
+                        <h3>Robinhood Security Hall of Fame</h3>
+                        <a href="https://app.intigriti.com/programs/robinhood/robinhoodbbp/leaderboard?alltime=true&severity=1"
+                            class="screenshot-link">View Certificate <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+
+                <!-- Screenshot 10 -->
+                <div class="screenshot-card">
+                    <div class="screenshot-img">
+                        <img src="fame/transport.png" alt="Intel Security Hall of Fame" data-src="fame/transport.png">
+                    </div>
+                    <div class="screenshot-content">
+                        <h3>YesWeHack Security Hall of Fame</h3>
+                        <a href="https://yeswehack.com/programs/land-transport-authority-bug-bounty-program#program-activity"
+                            class="screenshot-link">View Recognition <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+
+                <!-- Screenshot 11 -->
+                <div class="screenshot-card">
+                    <div class="screenshot-img">
+                        <img src="fame/komoju.jpg" alt="Adobe Security Hall of Fame" data-src="fame/komoju.jpg">
+                    </div>
+                    <div class="screenshot-content">
+                        <h3>KOMOJU Security Hall of Fame</h3>
+                        <a href="https://yeswehack.com/programs/komoju-public-bug-bounty-program#program-activity"
+                            class="screenshot-link">View Certificate <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+
+                <!-- Screenshot 12 -->
+                <div class="screenshot-card">
+                    <div class="screenshot-img">
+                        <img src="fame/alif2.png" alt="Netflix Security Hall of Fame" data-src="fame/alif2.png">
+                    </div>
+                    <div class="screenshot-content">
+                        <h3>NEOGOV Security Hall of Fame</h3>
+                        <a href="https://bugcrowd.com/engagements/neohrms/hall_of_fames" class="screenshot-link">View
+                            Recognition <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+
+                <!-- Screenshot 13 -->
+                <div class="screenshot-card">
+                    <div class="screenshot-img">
+                        <img src="fame/Hall_of_Fame13.jpg" alt="Additional Security Recognition"
+                            data-src="fame/Hall_of_Fame13.jpg">
+                    </div>
+                    <div class="screenshot-content">
+                        <h3>Additional Security Recognition</h3>
+                        <a href="#" class="screenshot-link">View Certificate <i
+                                class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+
+                <!-- Screenshot 14 -->
+                <div class="screenshot-card">
+                    <div class="screenshot-img">
+                        <img src="fame/Hall_of_Fame14.jpg" alt="Additional Security Recognition"
+                            data-src="fame/Hall_of_Fame14.jpg">
+                    </div>
+                    <div class="screenshot-content">
+                        <h3>Additional Security Recognition</h3>
+                        <a href="#" class="screenshot-link">View Recognition <i
+                                class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+
+                <!-- Screenshot 15 -->
+                <div class="screenshot-card">
+                    <div class="screenshot-img">
+                        <img src="fame/Hall_of_Fame15.jpg" alt="Additional Security Recognition"
+                            data-src="fame/Hall_of_Fame15.jpg">
+                    </div>
+                    <div class="screenshot-content">
+                        <h3>Additional Security Recognition</h3>
+                        <a href="#" class="screenshot-link">View Certificate <i
+                                class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+
+                <!-- Screenshot 16 -->
+                <div class="screenshot-card">
+                    <div class="screenshot-img">
+                        <img src="fame/Hall_of_Fame16.jpg" alt="Additional Security Recognition"
+                            data-src="fame/Hall_of_Fame16.jpg">
+                    </div>
+                    <div class="screenshot-content">
+                        <h3>Additional Security Recognition</h3>
+                        <a href="#" class="screenshot-link">View Recognition <i
+                                class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+
+                <!-- Screenshot 17 -->
+                <div class="screenshot-card">
+                    <div class="screenshot-img">
+                        <img src="fame/999.png" alt="Additional Security Recognition" data-src="fame/999.png">
+                    </div>
+                    <div class="screenshot-content">
+                        <h3>Additional Security Recognition</h3>
+                        <a href="#" class="screenshot-link">View Certificate <i
+                                class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+
+                <!-- Screenshot 18 -->
+                <div class="screenshot-card">
+                    <div class="screenshot-img">
+                        <img src="fame/Yeswehack.png" alt="Additional Security Recognition"
+                            data-src="fame/Yeswehack.png">
+                    </div>
+                    <div class="screenshot-content">
+                        <h3>Additional Security Recognition</h3>
+                        <a href="#" class="screenshot-link">View Recognition <i
+                                class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+
+                <!-- Screenshot 19 -->
+                <div class="screenshot-card">
+                    <div class="screenshot-img">
+                        <img src="fame/Hall_of_Fame19.jpg" alt="Additional Security Recognition"
+                            data-src="fame/Hall_of_Fame19.jpg">
+                    </div>
+                    <div class="screenshot-content">
+                        <h3>Additional Security Recognition</h3>
+                        <a href="#" class="screenshot-link">View Certificate <i
+                                class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+
+                <!-- Screenshot 20 -->
+                <div class="screenshot-card">
+                    <div class="screenshot-img">
+                        <img src="fame/Hall_of_Fame20.jpg" alt="Additional Security Recognition"
+                            data-src="fame/Hall_of_Fame20.jpg">
+                    </div>
+                    <div class="screenshot-content">
+                        <h3>Additional Security Recognition</h3>
+                        <a href="#" class="screenshot-link">View Recognition <i
+                                class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+
+                <!-- Screenshot 21 -->
+                <div class="screenshot-card">
+                    <div class="screenshot-img">
+                        <img src="fame/Hall_of_Fame21.jpg" alt="Additional Security Recognition"
+                            data-src="fame/Hall_of_Fame21.jpg">
+                    </div>
+                    <div class="screenshot-content">
+                        <h3>Additional Security Recognition</h3>
+                        <a href="#" class="screenshot-link">View Certificate <i
+                                class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+
+                <!-- Screenshot 22 -->
+                <div class="screenshot-card">
+                    <div class="screenshot-img">
+                        <img src="fame/Hall_of_Fame22.jpg" alt="Additional Security Recognition"
+                            data-src="fame/Hall_of_Fame22.jpg">
+                    </div>
+                    <div class="screenshot-content">
+                        <h3>Additional Security Recognition</h3>
+                        <a href="#" class="screenshot-link">View Recognition <i
+                                class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+
+                <!-- Screenshot 23 -->
+                <div class="screenshot-card">
+                    <div class="screenshot-img">
+                        <img src="fame/Hall_of_Fame23.jpg" alt="Additional Security Recognition"
+                            data-src="fame/Hall_of_Fame23.jpg">
+                    </div>
+                    <div class="screenshot-content">
+                        <h3>Additional Security Recognition</h3>
+                        <a href="#" class="screenshot-link">View Certificate <i
+                                class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+
+                <!-- Screenshot 24 -->
+                <div class="screenshot-card">
+                    <div class="screenshot-img">
+                        <img src="fame/Hall_of_Fame24.jpg" alt="Additional Security Recognition"
+                            data-src="fame/Hall_of_Fame24.jpg">
+                    </div>
+                    <div class="screenshot-content">
+                        <h3>Additional Security Recognition</h3>
+                        <a href="#" class="screenshot-link">View Recognition <i
+                                class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+
+                <!-- Screenshot 25 -->
+                <div class="screenshot-card">
+                    <div class="screenshot-img">
+                        <img src="fame/Hall_of_Fame25.png" alt="Additional Security Recognition"
+                            data-src="fame/Hall_of_Fame25.png">
+                    </div>
+                    <div class="screenshot-content">
+                        <h3>Additional Security Recognition</h3>
+                        <a href="#" class="screenshot-link">View Certificate <i
+                                class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+
+                <!-- Screenshot 26 -->
+                <div class="screenshot-card">
+                    <div class="screenshot-img">
+                        <img src="fame/Hall_of_Fame26.png" alt="Additional Security Recognition"
+                            data-src="fame/Hall_of_Fame26.png">
+                    </div>
+                    <div class="screenshot-content">
+                        <h3>Additional Security Recognition</h3>
+                        <a href="#" class="screenshot-link">View Recognition <i
+                                class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+
+                <!-- Screenshot 27 -->
+                <div class="screenshot-card">
+                    <div class="screenshot-img">
+                        <img src="fame/Hall_of_Fame27.png" alt="Additional Security Recognition"
+                            data-src="fame/Hall_of_Fame27.png">
+                    </div>
+                    <div class="screenshot-content">
+                        <h3>Additional Security Recognition</h3>
+                        <a href="#" class="screenshot-link">View Certificate <i
+                                class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+
+                <!-- Screenshot 28 -->
+                <div class="screenshot-card">
+                    <div class="screenshot-img">
+                        <img src="fame/Hall_of_Fame1.png" alt="Additional Security Recognition"
+                            data-src="fame/Hall_of_Fame28.png">
+                    </div>
+                    <div class="screenshot-content">
+                        <h3>Additional Security Recognition</h3>
+                        <a href="#" class="screenshot-link">View Recognition <i
+                                class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+
+                <!-- Screenshot 29 -->
+                <div class="screenshot-card">
+                    <div class="screenshot-img">
+                        <img src="fame/Tencent.png" alt="Additional Security Recognition" data-src="fame/Tencent.png">
+                    </div>
+                    <div class="screenshot-content">
+                        <h3>Additional Security Recognition</h3>
+                        <a href="#" class="screenshot-link">View Certificate <i
+                                class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+
+                <!-- Screenshot 30 -->
+                <div class="screenshot-card">
+                    <div class="screenshot-img">
+                        <img src="fame/Hall_of_Fame30.png" alt="Additional Security Recognition"
+                            data-src="fame/Hall_of_Fame30.png">
+                    </div>
+                    <div class="screenshot-content">
+                        <h3>Additional Security Recognition</h3>
+                        <a href="#" class="screenshot-link">View Recognition <i
+                                class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+
+                <!-- Screenshot 31 -->
+                <div class="screenshot-card">
+                    <div class="screenshot-img">
+                        <img src="fame/intigriti.com.png" alt="Additional Security Recognition"
+                            data-src="fame/intigriti.com.png">
+                    </div>
+                    <div class="screenshot-content">
+                        <h3>Additional Security Recognition</h3>
+                        <a href="#" class="screenshot-link">View Certificate <i
+                                class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <a href="index.html" class="back-button">
+            <i class="fas fa-arrow-left"></i> Back to Home
+        </a>
+    </div>
+    <!-- 
+PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09CiAgV2Vic2l0ZSBBdXRob3IgJiBDcmVhdG9yOiBNRCBBTElGIEhPU1NBSU4gKEFsaWZzZWMpCgogIEludHJvZHVjdGlvbjoKICBNeSBuYW1lIGlzIEFsaWZzZWMuCiAgSSBhbSBhbiBpbmRlcGVuZGVudCBzZWN1cml0eSByZXNlYXJjaGVyIG9uIEhhY2tlck9uZSwgQnVnY3Jvd2QsCiAgSW50aWdyaXRpLCBhbmQgWWVzV2VIYWNrLiBJIHdvcmsgYXMgYW4gZXRoaWNhbCBoYWNrZXIgYW5kIEkgYW0KICBhbHNvIHNraWxsZWQgaW4gRGlnaXRhbCBGb3JlbnNpY3MsIENURiBnYW1lcywgT1NJTlQsIGFuZCBQcm9ncmFtbWluZy4KCiAgSSBhbHNvIHdyaXRlIHN0b3JpZXMgYW5kIHBvZXRyeSB1c2luZyBteSB2aXJ0dWFsIG5hbWU6IFlhc2lyLgoKICB8fCBFdGhpY2FsIEhhY2tlciB8fCBTZWN1cml0eSBSZXNlYXJjaGVyIHx8IERpZ2l0YWwgRm9yZW5zaWNzIHx8CiAgfHwgT1NJTlQgRXhwZXJ0IHx8IFByb2dyYW1tZXIgfHwgV3JpdGVyL1BvZXQgKFlhc2lyKSB8fAoKVGVsZWdyYW0gaWQgPSB0Lm1lL0g0Y2szcl80TElGCkZhY2Vib29rIGlkID0gaHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL01ELkFMSUYuSE9TU0FJTi43NzczOQoKPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09
+-->
+    <!-- Image Modal -->
+    <div class="modal-overlay" id="imageModal">
+        <div class="modal-container">
+            <div class="animated-border"></div>
+            <button class="modal-close" id="modalClose">
+                <i class="fas fa-times"></i>
+            </button>
+            <img class="modal-image" id="modalImage" src="" alt="Expanded view">
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="index.html#home">Home</a>
+            <a href="index.html#services">Services</a>
+            <a href="index.html#experts">Our Experts</a>
+            <a href="index.html#contact">Contact</a>
+            <a href="achievements.html">Achievements</a>
+            <a href="blog.html">Blog</a>
+        </div>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p class="copyright">© 2023 Apex Falcon Security (AFS). All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Initialize particles for the top section
+        particlesJS("particles-top", {
+            "particles": {
+                "number": { "value": 80, "density": { "enable": true, "value_area": 700 } },
+                "color": { "value": "#00f0ff" },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.4 },
+                "size": { "value": 3, "random": true },
+                "line_linked": { "enable": true, "distance": 120, "color": "#00f0ff", "opacity": 0.4, "width": 1 },
+                "move": { "enable": true, "speed": 2, "direction": "none", "straight": false, "out_mode": "out" }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" } },
+                "modes": { "grab": { "distance": 200, "line_linked": { "opacity": 1 } }, "push": { "particles_nb": 4 } }
+            },
+            "retina_detect": true
+        });
+
+        // Image modal functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const modalOverlay = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            const modalClose = document.getElementById('modalClose');
+            const screenshotCards = document.querySelectorAll('.screenshot-card');
+
+            screenshotCards.forEach(card => {
+                card.addEventListener('click', function () {
+                    const imgElement = this.querySelector('img');
+                    const imageSrc = imgElement.getAttribute('src');
+                    const imageAlt = imgElement.getAttribute('alt');
+
+                    modalOverlay.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+
+                    modalImage.src = imageSrc;
+                    modalImage.alt = imageAlt;
+                });
+            });
+
+            modalClose.addEventListener('click', function () {
+                modalOverlay.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+
+            modalOverlay.addEventListener('click', function (e) {
+                if (e.target === modalOverlay) {
+                    modalOverlay.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && modalOverlay.classList.contains('active')) {
+                    modalOverlay.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
